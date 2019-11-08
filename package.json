@@ -4,7 +4,7 @@
   "description": "A tic-tac-toe project implemented using javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint":"eslint"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/tundeiness/Tic-Tac-Toe/issues"
   },
-  "homepage": "https://github.com/tundeiness/Tic-Tac-Toe#readme"
+  "homepage": "https://github.com/tundeiness/Tic-Tac-Toe#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
 }

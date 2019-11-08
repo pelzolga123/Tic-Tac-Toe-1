@@ -1,0 +1,24 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A tic-tac-toe project implemented using javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tundeiness/Tic-Tac-Toe.git"
+  },
+  "keywords": [
+    "tic-tac-toe",
+    "board",
+    "javascript"
+  ],
+  "author": "Olga Pelts & Tunde Oretade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tundeiness/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/tundeiness/Tic-Tac-Toe#readme"
+}

@@ -12,11 +12,28 @@ const gameBoard = () => {
             const index = i.toString()+j.toString();
             cell.setAttribute('id',index);
             row.appendChild(cell);
+            clicked(index);
         }
+
     }
+
     mainDiv.appendChild(table);
 };
 
 
+const clicked = id => {
+    document.addEventListener('DOMContentLoaded',function(){
+    const cellId = document.getElementById(id);
+    if(cellId.innerHTML == ""){
+    cellId.addEventListener('click', function(){   
+        cellId.innerHTML = id;
+    });
+    }
+    else{
+        console.log('not working');
+    }
+    })
+};
+ 
+ gameBoard();
 
-gameBoard();

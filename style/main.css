@@ -1,6 +1,9 @@
 td{
     width:100px;
     height:100px;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
 }
 #game{
     display: flex;

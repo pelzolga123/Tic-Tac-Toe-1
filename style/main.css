@@ -1,0 +1,8 @@
+td{
+    width:100px;
+    height:100px;
+}
+#game{
+    display: flex;
+    justify-content: center;
+}

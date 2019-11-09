@@ -69,8 +69,3 @@ const clicked = (id) => {
 };
 
 gameBoard();
-
-
-function getCell() {
-  return document.getElementsByTagName('td').innerText;
-}

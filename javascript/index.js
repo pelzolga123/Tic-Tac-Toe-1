@@ -1,7 +1,7 @@
 
 let currentTurn = 'X';
 let moves = 9;
-const array = [];
+let array = [];
 
 
 const gameBoard = () => {
@@ -41,10 +41,25 @@ function turns() {
 
 
   array.push(this.innerText);
-  console.log(currentTurn);
+  // console.log(currentTurn);
   // console.log(moves);
   console.log(array);
 }
+
+function restartGame() {
+  const table = document.getElementsByTagName('table')[0];
+  const trs = table.getElementsByTagName('tr');
+  let tds = null;
+
+  for (let i = 0; i < trs.length; i += 1) {
+    tds = trs[i].getElementsByTagName('td');
+    for (let n = 0; n < trs.length; n += 1) {
+      tds[n].innerText = '';
+    }
+  }
+  array = [];
+}
+
 
 const clicked = (id) => {
   document.addEventListener('DOMContentLoaded', () => {
@@ -56,32 +71,6 @@ const clicked = (id) => {
 gameBoard();
 
 
-function getWinner() {
-  const winCombo = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-  ];
-
-  winCombo.forEach((el) => {
-    el.forEach((e) => {
-      // console.log(e);
-      let counts = 0;
-      if ((array.indexOf('X') === e && counts === 3) || (array.indexOf('X') === e && counts === 3)) {
-        counts += 1;
-      }
-    });
-  });
-}
-
-getWinner();
-
-
-function restartGame() {
-
+function getCell() {
+  return document.getElementsByTagName('td').innerText;
 }

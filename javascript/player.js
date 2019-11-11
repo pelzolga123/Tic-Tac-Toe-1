@@ -6,7 +6,7 @@ const playerFactory = (name, symbol) => {
 
 
   const setSymbol = (playerOne) => {
-    if (playerOne.getLevel()) {
+    if (playerOne.getSymbol() {
       console.log(`${playerOne.getSymbol()}`);
     } else {
       console.log(`${playerTwo.getSymbol()}`);

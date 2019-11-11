@@ -33,18 +33,62 @@ function turns() {
   }
   this.innerText = currentTurn;
 
+  win(currentTurn, event.srcElement.id)
+
   if (currentTurn === 'X') {
     currentTurn = 'O';
   } else {
     currentTurn = 'X';
   }
-
-
-  array.push(this.innerText);
-  // console.log(currentTurn);
-  // console.log(moves);
-  console.log(array);
+  
 }
+const win = (turn, id) =>{
+ 
+    array.push({[turn]:id});
+        
+    const result = array.map((obj) => {  
+        return {
+            key: Object.keys(obj)[0], 
+            val: Object.values(obj)[0]
+          }
+      });
+      var arr_X =[];
+      var arr_O =[];
+    
+      result.forEach(function(mark){
+       
+        if(mark.key === 'X'){
+            arr_X.push(mark.val);
+            combinations(mark.key, arr_X);
+        }
+        else if(mark.key === 'O'){
+            arr_O.push(mark.val);
+            combinations(mark.key, arr_O);
+       }
+      });
+    }
+    
+    const combinations = (mark, arr) =>{
+        if(includes_id("00","11", "22", arr)
+        || includes_id("20", "11", "02", arr)
+        || includes_id("00", "01", "02", arr)
+        || includes_id("10", "11", "12", arr)
+        || includes_id("20", "21", "22", arr)
+        || includes_id("00", "10", "20", arr)
+        || includes_id("01", "11", "21", arr)
+        || includes_id("02", "12", "22", arr)
+        ){
+            alert(mark +' winns');
+        }
+      
+    }
+    
+    const includes_id =(x, y, z, arr)=>{
+        if(arr.includes(x) && arr.includes(y) && arr.includes(z)){
+            return true;
+        }
+        else return false;
+    }
 
 function restartGame() {
   const table = document.getElementsByTagName('table')[0];

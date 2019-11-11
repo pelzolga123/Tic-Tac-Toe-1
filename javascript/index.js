@@ -74,6 +74,9 @@ const combinations = (mark, arr) => {
   ) {
     alert(`${mark} winns`);
   }
+  else if(arr.length >= 5){
+    alert('test');
+  }
 };
 
 const includes_id = (x, y, z, arr) => {

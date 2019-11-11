@@ -23,7 +23,9 @@ const gameBoard = () => {
   }
 
   mainDiv.appendChild(table);
+  
 };
+
 
 function turns() {
   moves -= 1;
@@ -72,10 +74,12 @@ const combinations = (mark, arr) => {
         || includes_id('01', '11', '21', arr)
         || includes_id('02', '12', '22', arr)
   ) {
-    alert(`${mark} winns`);
+     
+    document.getElementById("title-card").innerHTML = `${mark} winns`;
+    freese(); 
   }
   else if(arr.length >= 5){
-    alert('test');
+    document.getElementById("title-card").innerHTML = 'Draw';
   }
 };
 
@@ -106,6 +110,11 @@ const clicked = (id) => {
     const cellId = document.getElementById(id);
     cellId.addEventListener('click', turns);
   });
+};
+
+const freese = () => {
+    var table  = document.querySelector("table");
+    table.setAttribute('class', 'avoid-clicks');
 };
 
 gameBoard();

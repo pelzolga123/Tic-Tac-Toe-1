@@ -1,11 +1,17 @@
 td{
-    width:100px;
-    height:100px;
-    font-size: 60px;
+    width:150px;
+    height:150px;
+    font-size: 80px;
     font-weight: 900;
     text-align: center;
 }
 #game{
     display: flex;
     justify-content: center;
+}
+.avoid-clicks{
+    pointer-events: none;
+}
+.card{
+    font-size:18px;
 }

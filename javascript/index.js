@@ -63,7 +63,19 @@ const win = (turn, id) => {
   });
 };
 
-const includes_id = (x, y, z, arr) => {
+function addUsers() {
+  const first = document.getElementById('firstPlayer').value;
+  const second = document.getElementById('secondPlayer').value;
+  console.log(first, second);
+}
+addUsers();
+
+const freese = () => {
+  const table = document.querySelector('table');
+  table.setAttribute('class', 'avoid-clicks');
+};
+
+const includesId = (x, y, z, arr) => {
   if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
     return true;
   }
@@ -71,14 +83,14 @@ const includes_id = (x, y, z, arr) => {
 };
 
 const combinations = (mark, arr) => {
-  if (includes_id('00', '11', '22', arr)
-        || includes_id('20', '11', '02', arr)
-        || includes_id('00', '01', '02', arr)
-        || includes_id('10', '11', '12', arr)
-        || includes_id('20', '21', '22', arr)
-        || includes_id('00', '10', '20', arr)
-        || includes_id('01', '11', '21', arr)
-        || includes_id('02', '12', '22', arr)
+  if (includesId('00', '11', '22', arr)
+        || includesId('20', '11', '02', arr)
+        || includesId('00', '01', '02', arr)
+        || includesId('10', '11', '12', arr)
+        || includesId('20', '21', '22', arr)
+        || includesId('00', '10', '20', arr)
+        || includesId('01', '11', '21', arr)
+        || includesId('02', '12', '22', arr)
   ) {
     document.getElementById('title-card').innerHTML = `${mark} wins`;
     freese();
@@ -110,9 +122,5 @@ const clicked = (id) => {
   });
 };
 
-const freese = () => {
-  const table = document.querySelector('table');
-  table.setAttribute('class', 'avoid-clicks');
-};
 
 gameBoard();

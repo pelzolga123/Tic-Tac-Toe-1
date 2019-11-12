@@ -2,7 +2,7 @@
   <h3 align="center">Tic-Tac-Toe Game</h3>
   <p align="center">
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://rawcdn.githack.com/tundeiness/Tic-Tac-Toe/507f370cb734a080a77ce50e398c88ef17f28e78/index.html">View Demo</a>
     ·
     <a href="https://github.com/tundeiness/Tic-Tac-Toe">Request Feature</a>
   </p>

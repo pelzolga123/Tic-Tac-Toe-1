@@ -66,17 +66,16 @@ const win = (turn, id) => {
   });
 };
 
-const addUsers = ()=> {
+const addUsers = () => {
   const first = document.getElementById('firstPlayer').value;
   const second = document.getElementById('secondPlayer').value;
   document.getElementById('turn').innerHTML = `${first}, please make your first move `;
-  
-  if (first == '' || second == ''){
+
+  if (first == '' || second == '') {
     freeze();
-  }
-  else{
+  } else {
     unfreeze();
-    return {first, second};
+    return { first, second };
   }
 };
 
@@ -108,14 +107,13 @@ const combinations = (mark, arr) => {
         || includesId('02', '12', '22', arr)
   ) {
     const name = addUsers();
-      if(mark === 'X'){
-        document.getElementById('title-card').innerHTML = `${name.first} wins`;
-        document.getElementById('turn').innerHTML = '';
-      }
-      else if(mark === 'O'){
-        document.getElementById('title-card').innerHTML = `${name.second} wins`;
-        document.getElementById('turn').innerHTML = '';
-      }
+    if (mark === 'X') {
+      document.getElementById('title-card').innerHTML = `${name.first} wins`;
+      document.getElementById('turn').innerHTML = '';
+    } else if (mark === 'O') {
+      document.getElementById('title-card').innerHTML = `${name.second} wins`;
+      document.getElementById('turn').innerHTML = '';
+    }
     freeze();
   } else if (arr.length >= 5) {
     document.getElementById('title-card').innerHTML = 'TIE';
@@ -124,10 +122,10 @@ const combinations = (mark, arr) => {
 
 
 function restartGame() {
-
   const table = document.getElementsByTagName('table')[0];
   const trs = table.getElementsByTagName('tr');
-  const winner = document.getElementById('title-card').innerHTML='';
+  const winner = document.getElementById('title-card');
+  winner.innerHTML = '';
   let tds = null;
   unfreeze();
   for (let i = 0; i < trs.length; i += 1) {

@@ -22,8 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Tic-Tac-Toe][product-screenshot]]('./img/Tic-Tac-Toe.gif')
-
+![Tic-Tac-Toe]('https://github.com/tundeiness/Tic-Tac-Toe/blob/board/img/Tic-Tac-Toe.gif?raw=true')
 This project is our implementation of the Tic tac toe game using Javascript
 Constructors. It is suitable only for two human players.
 

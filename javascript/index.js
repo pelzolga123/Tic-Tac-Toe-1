@@ -23,6 +23,7 @@ const gameBoard = () => {
   }
 
   mainDiv.appendChild(table);
+  freeze();
 };
 
 
@@ -51,28 +52,41 @@ const win = (turn, id) => {
   }));
   const arr_X = [];
   const arr_O = [];
-
+  const name = addUsers();
   result.forEach((mark) => {
     if (mark.key === 'X') {
+      document.getElementById('turn').innerHTML = `${name.second} it's your turn, mark - O `;
       arr_X.push(mark.val);
       combinations(mark.key, arr_X);
     } else if (mark.key === 'O') {
+      document.getElementById('turn').innerHTML = `${name.first} it's your turn, mark - X `;
       arr_O.push(mark.val);
       combinations(mark.key, arr_O);
     }
   });
 };
 
-function addUsers() {
+const addUsers = ()=> {
   const first = document.getElementById('firstPlayer').value;
   const second = document.getElementById('secondPlayer').value;
-  console.log(first, second);
-}
-addUsers();
 
-const freese = () => {
+  if (first == '' || second == ''){
+    freeze();
+  }
+  else{
+    unfreeze();
+    return {first, second};
+  }
+};
+
+const freeze = () => {
   const table = document.querySelector('table');
   table.setAttribute('class', 'avoid-clicks');
+};
+
+const unfreeze = () => {
+  const table = document.querySelector('table');
+  table.setAttribute('class', 'clicks');
 };
 
 const includesId = (x, y, z, arr) => {
@@ -92,19 +106,28 @@ const combinations = (mark, arr) => {
         || includesId('01', '11', '21', arr)
         || includesId('02', '12', '22', arr)
   ) {
-    document.getElementById('title-card').innerHTML = `${mark} wins`;
-    freese();
+    const name = addUsers();
+      if(mark === 'X'){
+        document.getElementById('title-card').innerHTML = `${name.first} wins`;
+        document.getElementById('turn').innerHTML = '';
+      }
+      else if(mark === 'O'){
+        document.getElementById('title-card').innerHTML = `${name.second} wins`;
+        document.getElementById('turn').innerHTML = '';
+      }
+    freeze();
   } else if (arr.length >= 5) {
-    document.getElementById('title-card').innerHTML = 'Draw';
+    document.getElementById('title-card').innerHTML = 'TIE';
   }
 };
 
 
 function restartGame() {
+
   const table = document.getElementsByTagName('table')[0];
   const trs = table.getElementsByTagName('tr');
   let tds = null;
-
+  unfreeze();
   for (let i = 0; i < trs.length; i += 1) {
     tds = trs[i].getElementsByTagName('td');
     for (let n = 0; n < trs.length; n += 1) {

@@ -12,6 +12,12 @@ td{
 .avoid-clicks{
     pointer-events: none;
 }
+.clicks{
+    pointer-events: auto;
+}
 .card{
     font-size:18px;
+}
+.jumbotron{
+    padding: 2rem 2rem!important;
 }

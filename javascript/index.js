@@ -1,4 +1,3 @@
-
 let currentTurn = 'X';
 let array = [];
 

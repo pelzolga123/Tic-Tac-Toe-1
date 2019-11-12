@@ -21,3 +21,6 @@ td{
 .jumbotron{
     padding: 2rem 2rem!important;
 }
+.display{
+    display:none;
+}

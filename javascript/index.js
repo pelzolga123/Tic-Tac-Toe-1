@@ -21,12 +21,12 @@ const includesId = (x, y, z, arr) => {
 const addUsers = () => {
   const first = document.getElementById('firstPlayer').value;
   const second = document.getElementById('secondPlayer').value;
-  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
-
   if (first === '' || second === '') {
     freeze();
+  
   } else {
     unfreeze();
+    document.getElementById('turn').innerHTML = `${first}, please make your first move `;
   }
   return { first, second };
 };

@@ -18,6 +18,13 @@ const unfreeze = () => {
   table.setAttribute('class', 'clicks');
 };
 
+const includesId = (x, y, z, arr) => {
+  if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
+    return true;
+  }
+  return false;
+};
+
 const combinations = (mark, arr) => {
   if (includesId('00', '11', '22', arr)
         || includesId('20', '11', '02', arr)
@@ -43,7 +50,6 @@ const combinations = (mark, arr) => {
 };
 
 function turns() {
-  
   if (this.innerText !== '') {
     return;
   }
@@ -71,11 +77,11 @@ const win = (turn, id) => {
   result.forEach((mark) => {
     if (mark.key === 'X') {
       document.getElementById('turn').innerHTML = `${name.second}, it's your turn, mark - O `;
-      arr_X.push(mark.val);
+      arrX.push(mark.val);
       combinations(mark.key, arrX);
     } else if (mark.key === 'O') {
       document.getElementById('turn').innerHTML = `${name.first}, it's your turn, mark - X `;
-      arr_O.push(mark.val);
+      arrO.push(mark.val);
       combinations(mark.key, arrO);
     }
   });
@@ -92,13 +98,6 @@ const addUsers = () => {
     unfreeze();
     return { first, second };
   }
-};
-
-const includesId = (x, y, z, arr) => {
-  if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
-    return true;
-  }
-  return false;
 };
 
 function restartGame() {

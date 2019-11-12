@@ -23,7 +23,6 @@ const gameBoard = () => {
   }
 
   mainDiv.appendChild(table);
-  
 };
 
 
@@ -64,6 +63,13 @@ const win = (turn, id) => {
   });
 };
 
+const includes_id = (x, y, z, arr) => {
+  if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
+    return true;
+  }
+  return false;
+};
+
 const combinations = (mark, arr) => {
   if (includes_id('00', '11', '22', arr)
         || includes_id('20', '11', '02', arr)
@@ -74,21 +80,13 @@ const combinations = (mark, arr) => {
         || includes_id('01', '11', '21', arr)
         || includes_id('02', '12', '22', arr)
   ) {
-     
-    document.getElementById("title-card").innerHTML = `${mark} winns`;
-    freese(); 
-  }
-  else if(arr.length >= 5){
-    document.getElementById("title-card").innerHTML = 'Draw';
+    document.getElementById('title-card').innerHTML = `${mark} winns`;
+    freese();
+  } else if (arr.length >= 5) {
+    document.getElementById('title-card').innerHTML = 'Draw';
   }
 };
 
-const includes_id = (x, y, z, arr) => {
-  if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
-    return true;
-  }
-  return false;
-};
 
 function restartGame() {
   const table = document.getElementsByTagName('table')[0];
@@ -113,8 +111,8 @@ const clicked = (id) => {
 };
 
 const freese = () => {
-    var table  = document.querySelector("table");
-    table.setAttribute('class', 'avoid-clicks');
+  const table = document.querySelector('table');
+  table.setAttribute('class', 'avoid-clicks');
 };
 
 gameBoard();

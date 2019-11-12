@@ -1,8 +1,23 @@
 
 let currentTurn = 'X';
-let moves = 9;
 let array = [];
 
+const clicked = (id) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const cellId = document.getElementById(id);
+    cellId.addEventListener('click', turns);
+  });
+};
+
+const freeze = () => {
+  const table = document.querySelector('table');
+  table.setAttribute('class', 'avoid-clicks');
+};
+
+const unfreeze = () => {
+  const table = document.querySelector('table');
+  table.setAttribute('class', 'clicks');
+};
 
 const gameBoard = () => {
   const mainDiv = document.getElementById('game');
@@ -28,6 +43,7 @@ const gameBoard = () => {
 
 
 function turns() {
+  let moves = 9;
   moves -= 1;
 
   if (this.innerText !== '') {
@@ -79,16 +95,6 @@ const addUsers = () => {
   }
 };
 
-const freeze = () => {
-  const table = document.querySelector('table');
-  table.setAttribute('class', 'avoid-clicks');
-};
-
-const unfreeze = () => {
-  const table = document.querySelector('table');
-  table.setAttribute('class', 'clicks');
-};
-
 const includesId = (x, y, z, arr) => {
   if (arr.includes(x) && arr.includes(y) && arr.includes(z)) {
     return true;
@@ -136,14 +142,5 @@ function restartGame() {
   }
   array = [];
 }
-
-
-const clicked = (id) => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const cellId = document.getElementById(id);
-    cellId.addEventListener('click', turns);
-  });
-};
-
 
 gameBoard();

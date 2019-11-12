@@ -80,7 +80,7 @@ const combinations = (mark, arr) => {
         || includes_id('01', '11', '21', arr)
         || includes_id('02', '12', '22', arr)
   ) {
-    document.getElementById('title-card').innerHTML = `${mark} winns`;
+    document.getElementById('title-card').innerHTML = `${mark} wins`;
     freese();
   } else if (arr.length >= 5) {
     document.getElementById('title-card').innerHTML = 'Draw';

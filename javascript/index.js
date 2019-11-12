@@ -64,10 +64,23 @@ function turns() {
   }
 }
 
+const addUsers = () => {
+  const first = document.getElementById('firstPlayer').value;
+  const second = document.getElementById('secondPlayer').value;
+  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
+
+  if (first === '' || second === '') {
+    freeze();
+  } else {
+    unfreeze();
+  }
+  return { first, second };
+};
+
 const win = (turn, id) => {
   array.push({ [turn]: id });
 
-  const result = array.map((obj) => ({
+  const result = array.map(obj => ({
     key: Object.keys(obj)[0],
     val: Object.values(obj)[0],
   }));
@@ -85,19 +98,6 @@ const win = (turn, id) => {
       combinations(mark.key, arrO);
     }
   });
-};
-
-const addUsers = () => {
-  const first = document.getElementById('firstPlayer').value;
-  const second = document.getElementById('secondPlayer').value;
-  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
-
-  if (first === '' || second === '') {
-    freeze();
-  } else {
-    unfreeze();
-    return { first, second };
-  }
 };
 
 function restartGame() {

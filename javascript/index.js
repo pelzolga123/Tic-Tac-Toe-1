@@ -24,8 +24,7 @@ const addUsers = () => {
 
   if (first === '' || second === '') {
     freeze();
-  } 
-  else {
+  } else {
     unfreeze();
     document.getElementById('turn').innerHTML = `${first}, please make your first move `;
   }

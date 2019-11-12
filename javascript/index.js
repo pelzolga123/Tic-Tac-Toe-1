@@ -31,29 +31,6 @@ const addUsers = () => {
   return { first, second };
 };
 
-const win = (turn, id) => {
-  array.push({ [turn]: id });
-
-  const result = array.map(obj => ({
-    key: Object.keys(obj)[0],
-    val: Object.values(obj)[0],
-  }));
-  const arrX = [];
-  const arrO = [];
-  const name = addUsers();
-  result.forEach((mark) => {
-    if (mark.key === 'X') {
-      document.getElementById('turn').innerHTML = `${name.second}, it's your turn, mark - O `;
-      arrX.push(mark.val);
-      combinations(mark.key, arrX);
-    } else if (mark.key === 'O') {
-      document.getElementById('turn').innerHTML = `${name.first}, it's your turn, mark - X `;
-      arrO.push(mark.val);
-      combinations(mark.key, arrO);
-    }
-  });
-};
-
 const combinations = (mark, arr) => {
   if (includesId('00', '11', '22', arr)
         || includesId('20', '11', '02', arr)
@@ -78,6 +55,29 @@ const combinations = (mark, arr) => {
   }
 };
 
+const win = (turn, id) => {
+  array.push({ [turn]: id });
+
+  const result = array.map(obj => ({
+    key: Object.keys(obj)[0],
+    val: Object.values(obj)[0],
+  }));
+  const arrX = [];
+  const arrO = [];
+  const name = addUsers();
+  result.forEach((mark) => {
+    if (mark.key === 'X') {
+      document.getElementById('turn').innerHTML = `${name.second}, it's your turn, mark - O `;
+      arrX.push(mark.val);
+      combinations(mark.key, arrX);
+    } else if (mark.key === 'O') {
+      document.getElementById('turn').innerHTML = `${name.first}, it's your turn, mark - X `;
+      arrO.push(mark.val);
+      combinations(mark.key, arrO);
+    }
+  });
+};
+
 function turns(event) {
   if (this.innerText !== '') {
     return;
@@ -100,7 +100,7 @@ const clicked = (id) => {
   });
 };
 
-function restartGame () {
+function restartGame() {
   const table = document.getElementsByTagName('table')[0];
   const trs = table.getElementsByTagName('tr');
   document.getElementById('title-card').innerHTML = '';
@@ -114,15 +114,14 @@ function restartGame () {
     }
   }
   array = [];
-};
+}
 
 const gameBoard = () => {
   const mainDiv = document.getElementById('game');
   const table = document.createElement('table');
   table.setAttribute('border', 1);
   const btn = document.getElementById('replay');
-  btn.addEventListener('click',restartGame);
- 
+  btn.addEventListener('click', restartGame);
   for (let i = 0; i < 3; i += 1) {
     const row = document.createElement('tr');
     table.appendChild(row);

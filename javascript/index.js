@@ -55,11 +55,11 @@ const win = (turn, id) => {
   const name = addUsers();
   result.forEach((mark) => {
     if (mark.key === 'X') {
-      document.getElementById('turn').innerHTML = `${name.second} it's your turn, mark - O `;
+      document.getElementById('turn').innerHTML = `${name.second}, it's your turn, mark - O `;
       arr_X.push(mark.val);
       combinations(mark.key, arr_X);
     } else if (mark.key === 'O') {
-      document.getElementById('turn').innerHTML = `${name.first} it's your turn, mark - X `;
+      document.getElementById('turn').innerHTML = `${name.first}, it's your turn, mark - X `;
       arr_O.push(mark.val);
       combinations(mark.key, arr_O);
     }
@@ -69,7 +69,8 @@ const win = (turn, id) => {
 const addUsers = ()=> {
   const first = document.getElementById('firstPlayer').value;
   const second = document.getElementById('secondPlayer').value;
-
+  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
+  
   if (first == '' || second == ''){
     freeze();
   }
@@ -126,6 +127,7 @@ function restartGame() {
 
   const table = document.getElementsByTagName('table')[0];
   const trs = table.getElementsByTagName('tr');
+  const winner = document.getElementById('title-card').innerHTML='';
   let tds = null;
   unfreeze();
   for (let i = 0; i < trs.length; i += 1) {

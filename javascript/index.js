@@ -1,13 +1,6 @@
 let currentTurn = 'X';
 let array = [];
 
-const clicked = (id) => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const cellId = document.getElementById(id);
-    cellId.addEventListener('click', turns);
-  });
-};
-
 const freeze = () => {
   const table = document.querySelector('table');
   table.setAttribute('class', 'avoid-clicks');
@@ -23,6 +16,19 @@ const includesId = (x, y, z, arr) => {
     return true;
   }
   return false;
+};
+
+const addUsers = () => {
+  const first = document.getElementById('firstPlayer').value;
+  const second = document.getElementById('secondPlayer').value;
+  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
+
+  if (first === '' || second === '') {
+    freeze();
+  } else {
+    unfreeze();
+  }
+  return { first, second };
 };
 
 const combinations = (mark, arr) => {
@@ -49,7 +55,7 @@ const combinations = (mark, arr) => {
   }
 };
 
-function turns() {
+function turns(event) {
   if (this.innerText !== '') {
     return;
   }
@@ -64,17 +70,11 @@ function turns() {
   }
 }
 
-const addUsers = () => {
-  const first = document.getElementById('firstPlayer').value;
-  const second = document.getElementById('secondPlayer').value;
-  document.getElementById('turn').innerHTML = `${first}, please make your first move `;
-
-  if (first === '' || second === '') {
-    freeze();
-  } else {
-    unfreeze();
-  }
-  return { first, second };
+const clicked = (id) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const cellId = document.getElementById(id);
+    cellId.addEventListener('click', turns);
+  });
 };
 
 const win = (turn, id) => {
@@ -100,7 +100,7 @@ const win = (turn, id) => {
   });
 };
 
-function restartGame() {
+const restartGame = () => {
   const table = document.getElementsByTagName('table')[0];
   const trs = table.getElementsByTagName('tr');
   const winner = document.getElementById('title-card');

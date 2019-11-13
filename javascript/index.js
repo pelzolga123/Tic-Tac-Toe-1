@@ -59,7 +59,7 @@ const combinations = (mark, arr) => {
   }
 };
 
-const game = (()=>{
+const game = (() => {
   const currentTurn = 'X';
   const array = [];
 
@@ -146,6 +146,5 @@ const gameBoard = (() => {
     }
   }
 
-  mainDiv.appendChild(table);
-  freeze();
+  return mainDiv.appendChild(table);
 })();

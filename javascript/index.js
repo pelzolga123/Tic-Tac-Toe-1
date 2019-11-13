@@ -15,25 +15,23 @@ const includesId = (x, y, z, arr) => {
   return false;
 };
 
-const player = (() =>{
-  const check  = (first, second) => {
-  if (first === '' || second === '') {
-    freeze();
-  } else {
-    unfreeze();
-    document.getElementById('turn').innerHTML = `${first}, please make your first move `;
-  }
-  return { first, second };
-  }
-return{check};
+const player = (() => {
+  const check = (first, second) => {
+    if (first === '' || second === '') {
+      freeze();
+    } else {
+      unfreeze();
+      document.getElementById('turn').innerHTML = `${first}, please make your first move `;
+    }
+    return { first, second };
+  };
+  return { check };
 })();
 
 const addUsers = () => {
   const first = document.getElementById('firstPlayer').value;
   const second = document.getElementById('secondPlayer').value;
-
   return player.check(first, second);
-
 };
 
 const combinations = (mark, arr) => {
@@ -61,10 +59,17 @@ const combinations = (mark, arr) => {
   }
 };
 
+const game = (()=>{
+  const currentTurn = 'X';
+  const array = [];
+
+  return { currentTurn, array };
+})();
+
 const win = (turn, id) => {
   game.array.push({ [turn]: id });
 
-  const result =game.array.map(obj => ({
+  const result = game.array.map(obj => ({
     key: Object.keys(obj)[0],
     val: Object.values(obj)[0],
   }));
@@ -143,11 +148,4 @@ const gameBoard = (() => {
 
   mainDiv.appendChild(table);
   freeze();
-})();
-
-const game = (()=>{
-  let currentTurn = 'X';
-  let array = [];
-
-  return{currentTurn, array};
 })();

@@ -150,4 +150,4 @@ const gameBoard = (() => {
   freeze();
 })();
 
-(function startGame() { gameBoard }());
+(function startGame() { return gameBoard; }());

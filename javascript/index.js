@@ -146,5 +146,8 @@ const gameBoard = (() => {
     }
   }
 
-  return mainDiv.appendChild(table);
+  mainDiv.appendChild(table);
+  freeze();
 })();
+
+(function startGame() { gameBoard }());

@@ -1,6 +1,3 @@
-let currentTurn = 'X';
-let array = [];
-
 const freeze = () => {
   const table = document.querySelector('table');
   table.setAttribute('class', 'avoid-clicks');
@@ -18,10 +15,8 @@ const includesId = (x, y, z, arr) => {
   return false;
 };
 
-const addUsers = () => {
-  const first = document.getElementById('firstPlayer').value;
-  const second = document.getElementById('secondPlayer').value;
-
+const player = (() =>{
+  const check  = (first, second) => {
   if (first === '' || second === '') {
     freeze();
   } else {
@@ -29,6 +24,16 @@ const addUsers = () => {
     document.getElementById('turn').innerHTML = `${first}, please make your first move `;
   }
   return { first, second };
+  }
+return{check};
+})();
+
+const addUsers = () => {
+  const first = document.getElementById('firstPlayer').value;
+  const second = document.getElementById('secondPlayer').value;
+
+  return player.check(first, second);
+
 };
 
 const combinations = (mark, arr) => {
@@ -52,13 +57,14 @@ const combinations = (mark, arr) => {
     freeze();
   } else if (arr.length >= 5) {
     document.getElementById('title-card').innerHTML = 'TIE';
+    document.getElementById('turn').innerHTML = '';
   }
 };
 
 const win = (turn, id) => {
-  array.push({ [turn]: id });
+  game.array.push({ [turn]: id });
 
-  const result = array.map(obj => ({
+  const result =game.array.map(obj => ({
     key: Object.keys(obj)[0],
     val: Object.values(obj)[0],
   }));
@@ -82,14 +88,14 @@ function turns(event) {
   if (this.innerText !== '') {
     return;
   }
-  this.innerText = currentTurn;
+  this.innerText = game.currentTurn;
 
-  win(currentTurn, event.srcElement.id);
+  win(game.currentTurn, event.srcElement.id);
 
-  if (currentTurn === 'X') {
-    currentTurn = 'O';
+  if (game.currentTurn === 'X') {
+    game.currentTurn = 'O';
   } else {
-    currentTurn = 'X';
+    game.currentTurn = 'X';
   }
 }
 
@@ -113,10 +119,10 @@ function restartGame() {
       tds[n].innerText = '';
     }
   }
-  array = [];
+  game.array = [];
 }
 
-const gameBoard = () => {
+const gameBoard = (() => {
   const mainDiv = document.getElementById('game');
   const table = document.createElement('table');
   table.setAttribute('border', 1);
@@ -137,6 +143,11 @@ const gameBoard = () => {
 
   mainDiv.appendChild(table);
   freeze();
-};
+})();
 
-gameBoard();
+const game = (()=>{
+  let currentTurn = 'X';
+  let array = [];
+
+  return{currentTurn, array};
+})();

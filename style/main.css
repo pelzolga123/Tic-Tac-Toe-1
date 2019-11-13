@@ -1,0 +1,26 @@
+td{
+    width:150px;
+    height:150px;
+    font-size: 80px;
+    font-weight: 900;
+    text-align: center;
+}
+#game{
+    display: flex;
+    justify-content: center;
+}
+.avoid-clicks{
+    pointer-events: none;
+}
+.clicks{
+    pointer-events: auto;
+}
+.card{
+    font-size:18px;
+}
+.jumbotron{
+    padding: 2rem 2rem!important;
+}
+.display{
+    display:none;
+}

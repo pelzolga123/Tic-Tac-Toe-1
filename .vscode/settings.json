@@ -1,3 +1,5 @@
 {
-  "jira-plugin.workingProject": ""
+  "jira-plugin.workingProject": "",
+  "eslint.alwaysShowStatus": true,
+  "javascript.implicitProjectConfig.checkJs": true
 }

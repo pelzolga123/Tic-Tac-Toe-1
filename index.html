@@ -1,0 +1,52 @@
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tic Tac Toe</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/sketchy/bootstrap.min.css">
+  </head>
+  <body>
+      <h1 class="display-3 text-center mt-4">Welcome to Tic-Tac-Toe!</h1>  
+      <div class="container mt-4 jumbotron">
+        <h3 id='turn' class='text-center mt-1 mb-3'></h3>
+      <div class="row">
+      <div id='player' class='card bg-dark col-md-4 text-white'>
+      <div class="form-group">
+       <p class="lead mt-3">First player mark - X</p>
+       <label class="control-label" for = 'firstPlayer'>First player name : </label>
+       <input class="form-control" id = 'firstPlayer'/>
+      </div> 
+      <div class="form-group">
+      <p class="lead mt-3">Second player mark - O</p>
+      <label class="control-label" for = 'secondPlayer'>Second player name : </label>
+      <input class="form-control" id ='secondPlayer'/>
+      </div>
+      <button class='btn btn-primary btn-lg mt-3' onclick=addUsers()>Start</button>
+      <button class='btn btn-info btn-lg mt-3 mb-3' id='replay' >Replay</button>
+    </div>
+
+    <div class="col-md-5">
+    <div id='game' >
+
+    </div>
+    </div>
+    <div class='info col-md-3'>
+      <div class ='card border-info mb-3'>
+          <div class="card-header">Winner</div>
+          <div class="card-body">
+            <h4 id ="title-card" class="card-title"></h4> 
+          </div>
+      </div>
+    </div>
+    <div class="endgame">
+      <div class="text">
+
+      </div>
+    </div>
+  </div>
+</div>
+    <script type="text/javascript" src="./javascript/index.js"></script>
+  </body>
+</html>

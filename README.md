@@ -8,17 +8,6 @@
   </p>
 </p>
 
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
-  - [Built With](#built-with)
-- [How to play the game](#how-to-play-the-game)
-- [Contributors](#contributors)
-- [Contributing](#contributing)
-- [License](#license)
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <h3 align="center">Tic-Tac-Toe Game</h3>
+  <h1 align="center">Tic-Tac-Toe Game  👋</h1>
   <p align="center">
     <br />
     <a href="https://rawcdn.githack.com/tundeiness/Tic-Tac-Toe/fb88873c697686b5caf522bf73bfcb3f5d5cc066/index.html">View Demo</a>

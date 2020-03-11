@@ -44,9 +44,15 @@ The game can also be a tie if none of the players hits the winning combinations
 and all grids are filled.
 
 <!-- CONTRIBUTING -->
-## Contributors
-This is a collaborative project by [Olga Pelts](https://github.com/pelzolga123)
-& [Tunde Oretade](https://github.com/tundeiness)
+## Authors
+
+👤 **Olga Pelts**
+   - Github: [@pelzolga123](https://github.com/pelzolga123)
+   - LinkedIn: [Olga Pelts](https://www.linkedin.com/in/olga-pelts/)
+
+👤 **Tunde Oretade**
+   - Github: [@tundeiness](https://github.com/tundeiness)
+   - LinkedIn: [Tunde Oretade](https://www.linkedin.com/in/tundeoretade/)
 
 
 <!-- CONTRIBUTING -->

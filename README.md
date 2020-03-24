@@ -21,7 +21,6 @@ Constructors. It is suitable only for two human players.
 * Javascript
 * CSS
 
-
 ## How to play the game
 
 The Board is an empty grid of (3 x 3) at the beginning.
@@ -31,6 +30,10 @@ notification when the start button is selected.
 A winner will only be determined if the combinations as set in the game are fulfilled.
 The game can also be a tie if none of the players hits the winning combinations
 and all grids are filled.
+
+
+### Future feature
+* Users can play against computer.
 
 <!-- CONTRIBUTING -->
 ## Authors

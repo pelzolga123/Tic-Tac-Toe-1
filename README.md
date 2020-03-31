@@ -27,7 +27,7 @@ The Board is an empty grid of (3 x 3) at the beginning.
 To play the Game the Users needs to input their names first and you will get a
 notification when the start button is selected.
 
-A winner will only be determined if the combinations as set in the game are fulfilled.
+A winner will only be determined if the combinations in the game are fulfilled.
 The game can also be a tie if none of the players hits the winning combinations
 and all grids are filled.
 
@@ -52,7 +52,7 @@ and all grids are filled.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
